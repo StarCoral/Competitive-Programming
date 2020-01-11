@@ -9,6 +9,7 @@ int main(){
     while(t--){
         int n;
         cin>>n;
+        
         long long sum = 0,mx = 0,cur = 0;
         vector<long long> v(n);
 
