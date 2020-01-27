@@ -1,0 +1,13 @@
+ll gcd(ll m , ll n){
+    ll r;
+    while(n != 0){
+        r = m % n;
+        m = n;
+        n = r; 
+    }
+    return m;
+}
+ll lcm(ll m ,ll n){
+    cout<<"m: "<<m<<" n: "<<n<<" lcm: "<<(m*n/gcd(m,n)%MAX)<<"\n";
+    return m*n/gcd(m,n)%MAX;
+}
