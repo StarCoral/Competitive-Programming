@@ -50,5 +50,21 @@ Input: -3   1  4   3   -1
    當前面的元素和是負數時，就不要加，
    加入反而會變小
 
+```
+kadane(Array){
+
+    generalMaximum = currentMaximum = Array[0]
+
+    for (i = 1 until n) {
+        currentMaximum = maximum of(Array[i], currentMaximum + Array[i]);
+        if(currentMaximum >= generalMaximum) 
+            generalMaximum = currentMaximum;
+    }
+
+    return generalMaximum;
+
+}
+```
 Reference
 https://aikosenoo.pixnet.net/blog/post/7442660
+http://bedirtapkan.com/Kadane%27s-Algorithm-2/
