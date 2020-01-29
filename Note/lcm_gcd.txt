@@ -11,3 +11,7 @@ ll lcm(ll m ,ll n){
     cout<<"m: "<<m<<" n: "<<n<<" lcm: "<<(m*n/gcd(m,n)%MAX)<<"\n";
     return m*n/gcd(m,n)%MAX;
 }
+
+
+ __gcd(x,y)
+a * b / __gcd(a,b)
