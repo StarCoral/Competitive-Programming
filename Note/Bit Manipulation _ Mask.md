@@ -43,7 +43,7 @@ toggle a subset of the bits in the value
 
 ## Improve Efficiency
 
-+ Odd or Even : x&1; // 0 -> odd
++ Odd or Even : x&1; // 1&1 = 1 -> odd
 + Multiply 2 : x <<=1;
 + Power of 2 : 
   + x && (!(x & (x-1))) ; //test x is power of 2? if =1 ->Yes
