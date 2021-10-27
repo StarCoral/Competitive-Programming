@@ -8,16 +8,16 @@
 比較時，若遇到的值比正處理的值大或相等，則將值往右移  
 
 ### Time Complexity
-+ Best Case：Ο(1)  
-  當資料的順序恰好為由小到大時，每回合只需比較1次  
-+ Worst Case：Ο(n2)  
-  當資料的順序恰好為由大到小時，第i回合需比i次  
-+ Average Case：Ο(n2)  
-  第n筆資料，平均比較n/2次  
++ Best Case：Ο(n)  
+  當資料的順序恰好為由小到大時，每回合while-loop只需比較1次  
++ Worst Case：Ο(n^2)  
+  當資料的順序恰好為由大到小時，第j回合while-loop需比j次  
++ Average Case：Ο(n^2)  
+  第n筆資料，while-loop平均比較n/2次  
 
 ## Space Complexity
 
-+ θ(1) //in-place
++ θ(n) //in-place
 
 ## Code
 
@@ -28,15 +28,16 @@ using namespace std;
 void InsertionSort(int *arr, int size){
     ios::sync_with_stdio(0);
     cin.tie(0);
-	for(int i = 1 ; i < size ; i++){
-		int key = arr[i];
-		int j = i - 1;
-        while(key < arr[j] && j >= 0){
-            arr[j+1] = arr[j];
-            j--;
-        }
-        arr[j+1] = key;
+	
+	for(int i = 1; i < size ; i++){
+		int key = arr[i], j = i - 1;
+		while(j >= 0 && arr[j] > key) {
+			arr[j+1] = arr[j];
+			j--;
+		}
+		arr[j+1] = key;
 	}
+
 }
 
 int main(){
@@ -47,15 +48,12 @@ int main(){
     }
     cout<<'\n';
 
-    InsertionSort(arr,6);
+    InsertionSort(arr , 6);
     cout<<"sorted: ";
     for(auto a : arr){
         cout<<a<<' ';
     }
     cout<<'\n';
 }
+
 ```
-## Reference
-
-http://notepad.yehyeh.net/Content/Algorithm/Sort/Insertion/1.php
-
